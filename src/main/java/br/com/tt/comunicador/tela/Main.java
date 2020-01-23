@@ -1,14 +1,9 @@
 package br.com.tt.comunicador.tela;
 
 import br.com.tt.comunicador.common.Util;
-import br.com.tt.comunicador.exceptions.TamanhoMensagemInvalidoException;
 import br.com.tt.comunicador.model.Mensagem;
 import br.com.tt.comunicador.model.Usuario;
 
-import java.text.DateFormat;
-import java.text.spi.DateFormatProvider;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 

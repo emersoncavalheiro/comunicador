@@ -22,10 +22,7 @@ class MenuNovaMensagem {
             System.err.println(e);
             util.print(e.getMessage());
             return null;
-        } finally {
-
         }
-
 
     }
 }

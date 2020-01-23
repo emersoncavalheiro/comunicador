@@ -14,4 +14,20 @@ public class Usuario {
 
     }
 
+    public int idade(){
+        return LocalDate.now().getYear() - nascimento.getYear();
+
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public LocalDate getNascimento() {
+        return nascimento;
+    }
 }
