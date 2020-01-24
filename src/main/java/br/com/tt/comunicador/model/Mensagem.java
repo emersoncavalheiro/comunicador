@@ -10,6 +10,10 @@ public class Mensagem {
     private String texto;
     private LocalDateTime dataHora;
 
+    public String getTexto() {
+        return texto;
+    }
+
     public Mensagem(String texto) throws TamanhoMensagemInvalidoException {
         verificaTamanhoMinimo(texto);
         this.texto = texto;

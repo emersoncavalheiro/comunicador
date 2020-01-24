@@ -6,6 +6,4 @@ public class TamanhoMensagemInvalidoException extends Exception {
         super(msg);
     }
 
-
-
 }

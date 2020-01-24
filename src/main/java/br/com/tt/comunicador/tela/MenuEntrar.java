@@ -1,6 +1,8 @@
 package br.com.tt.comunicador.tela;
 
 import br.com.tt.comunicador.common.Util;
+import br.com.tt.comunicador.enumerations.EstadoEnum;
+import br.com.tt.comunicador.exceptions.EstadoInexistenteException;
 import br.com.tt.comunicador.model.Usuario;
 
 import java.time.LocalDate;
@@ -16,19 +18,28 @@ class MenuEntrar {
         this.util = util;
     }
 
-    Usuario entrar(){
+    Usuario entrar() throws EstadoInexistenteException {
         util.print("Informe seu username:");
         String username = util.read();
 
         util.print("Informe seu nome:");
         String nome = util.read();
 
+        util.print("Informe a sigla do seu estado:");
+        EstadoEnum estadoEnum;
+        String estado = util.read();
+        try {
+            estadoEnum = EstadoEnum.valueOf(estado);
+        }catch (IllegalArgumentException e){
+            throw new EstadoInexistenteException("Estado inexistente: "+estado);
+        }
+
         util.print("Informe seu nascimento (dd/mm/yyyy):");
         String nascimentoTexto = util.read();
 
         LocalDate nascimento = LocalDate.parse(nascimentoTexto, FORMATO);
 
-        return new Usuario(username, nome, nascimento);
-
+        return new Usuario(username, nome, estadoEnum, nascimento);
     }
+
 }
